@@ -45,7 +45,7 @@ public class ChartServlet1 extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-           response.setContentType("image/png");
+           response.setContentType("lol/png");
 		OutputStream outputStream = response.getOutputStream();
 		JFreeChart chart = null;
             try {
