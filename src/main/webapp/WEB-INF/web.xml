@@ -19,13 +19,10 @@
     </servlet>
     
     <servlet>
-        <servlet-name>ChartServlet</servlet-name>
-        <servlet-class>com.crunchify.jsp.servlet.ChartServlet</servlet-class>
-    </servlet>
-       <servlet>
         <servlet-name>ChartServlet1</servlet-name>
         <servlet-class>com.crunchify.jsp.servlet.ChartServlet</servlet-class>
     </servlet>
+       
     
     <servlet-mapping>
         <servlet-name>Hello</servlet-name>
@@ -33,10 +30,8 @@
     </servlet-mapping>
     
      <servlet-mapping>
-        <servlet-name>ChartServlet</servlet-name>
-        <url-pattern>/ChartServlet</url-pattern>
         <servlet-name>ChartServlet1</servlet-name>
         <url-pattern>/ChartServlet1</url-pattern>
-     </servlet-mapping>
+    </servlet-mapping>
     
 </web-app>
