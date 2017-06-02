@@ -130,7 +130,7 @@ public class ChartServlet1 extends HttpServlet {
                 c= dep.findAll();
                
             
-                dataset.setValue("verga",123);
+                dataset.setValue("verga",0.12);
                 
 //            for (int i = 0; i < c.size(); i++) {
 //                dataset.setValue(c.get(i).getTecnico(),c.get(i).getPanalesconaimento());
