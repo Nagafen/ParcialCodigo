@@ -45,14 +45,17 @@ public class ChartServlet1 extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-            response.setContentType("image/png");
-            OutputStream outputStream = response.getOutputStream();
-            JFreeChart chart = getChart();
-            chart = getChart();
-            int width = 500;
-            int height = 350;
-            ChartUtilities.writeChartAsPNG(outputStream, chart, width, height);
-            
+           response.setContentType("image/png");
+		OutputStream outputStream = response.getOutputStream();
+		JFreeChart chart = null;
+            try {
+                chart = getChart();
+            } catch (URISyntaxException ex) {
+                Logger.getLogger(ChartServlet.class.getName()).log(Level.SEVERE, null, ex);
+            }
+		int width = 500;
+		int height = 350;
+		ChartUtilities.writeChartAsPNG(outputStream, chart, width, height);
 		
 
 	}
@@ -121,7 +124,7 @@ public class ChartServlet1 extends HttpServlet {
         
         
 
-	public JFreeChart getChart() {
+	public JFreeChart getChart() throws URISyntaxException {
 		
                 DefaultPieDataset dataset = new DefaultPieDataset();
 	        //Crear la capa de servicios que se enlace con el DAO
@@ -130,11 +133,11 @@ public class ChartServlet1 extends HttpServlet {
                 c= dep.findAll();
                
             
-                dataset.setValue("verga",0.12);
+               
                 
-//            for (int i = 0; i < c.size(); i++) {
-//                dataset.setValue(c.get(i).getTecnico(),c.get(i).getPanalesconaimento());
-//            }
+            for (int i = 0; i < c.size(); i++) {
+                dataset.setValue(c.get(i).getTecnico(),c.get(i).getPanalesconaimento());
+            }
             
 		boolean legend = true;
 		boolean tooltips = false;
