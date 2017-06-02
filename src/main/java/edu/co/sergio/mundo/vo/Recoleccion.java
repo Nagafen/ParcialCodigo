@@ -11,11 +11,11 @@ package edu.co.sergio.mundo.vo;
  */
 public class Recoleccion {
     
-String fecha ;
-String recolector; 
-int id_colmena ;
-int kilosdeiel ;
-boolean aprobacion ;
+    private String fecha ;
+    private int recolector; 
+    private int idColmena ;
+    private int kilosdeMiel ;
+    private int idRecoleccion;
 
     public String getFecha() {
         return fecha;
@@ -25,41 +25,37 @@ boolean aprobacion ;
         this.fecha = fecha;
     }
 
-    public String getRecolector() {
+    public int getRecolector() {
         return recolector;
     }
 
-    public void setRecolector(String recolector) {
+    public void setRecolector(int recolector) {
         this.recolector = recolector;
     }
 
-    public int getId_colmena() {
-        return id_colmena;
+    public int getIdColmena() {
+        return idColmena;
     }
 
-    public void setId_colmena(int id_colmena) {
-        this.id_colmena = id_colmena;
+    public void setIdColmena(int idColmena) {
+        this.idColmena = idColmena;
     }
 
-    public int getKilosdeiel() {
-        return kilosdeiel;
+    public int getKilosdeMiel() {
+        return kilosdeMiel;
     }
 
-    public void setKilosdeiel(int kilosdeiel) {
-        this.kilosdeiel = kilosdeiel;
+    public void setKilosdeMiel(int kilosdeiel) {
+        this.kilosdeMiel = kilosdeiel;
     }
 
-    public boolean isAprobacion() {
-        return aprobacion;
+    public int getIdRecoleccion() {
+        return idRecoleccion;
     }
 
-    public void setAprobacion(boolean aprobacion) {
-        this.aprobacion = aprobacion;
+    public void setIdRecoleccion(int idRecoleccion) {
+        this.idRecoleccion = idRecoleccion;
     }
-
-
-
-
     
     
 }

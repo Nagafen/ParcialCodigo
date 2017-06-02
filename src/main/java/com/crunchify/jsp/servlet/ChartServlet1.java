@@ -8,8 +8,8 @@ package com.crunchify.jsp.servlet;
 
 
 //import Modelo.panelesConAlimento;
-import edu.co.sergio.mundo.dao.Visitas_tecnicasDao;
-import edu.co.sergio.mundo.vo.Visitas_Tecnicas;
+import edu.co.sergio.mundo.dao.VisitasTecnicasDAO;
+import edu.co.sergio.mundo.vo.visitasTecnicas;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.ArrayList;
@@ -40,16 +40,16 @@ public class ChartServlet1 extends HttpServlet {
   
     private JFreeChart createChart() {
         DefaultPieDataset dataset = new DefaultPieDataset();
-        Visitas_tecnicasDao c=new Visitas_tecnicasDao();
-        ArrayList<Visitas_Tecnicas> arr=new ArrayList();
-        arr=(ArrayList<Visitas_Tecnicas>) c.findAll();
+        VisitasTecnicasDAO c=new VisitasTecnicasDAO();
+        ArrayList<visitasTecnicas> arr=new ArrayList();
+        arr=(ArrayList<visitasTecnicas>) c.findAll();
         
         for (int i = 0; i < arr.size(); i++) {
-            dataset.setValue(arr.get(i).getTecnico(), arr.get(i).getPanalesconaimento());
+            dataset.setValue(arr.get(i).getCalidadPoblacion(), arr.get(i).getPanelesConCria());
         }
         
         JFreeChart chart = ChartFactory.createPieChart(
-            "Porcentaje de paneles con Alimentos",  // chart title
+            "Porcentaje de paneles con Crias",  // chart title
             dataset,             // dataset
             true,                // include legend
             true,

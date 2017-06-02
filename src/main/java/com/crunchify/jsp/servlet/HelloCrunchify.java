@@ -1,7 +1,7 @@
 package com.crunchify.jsp.servlet;
  
-import edu.co.sergio.mundo.dao.Visitas_tecnicasDao;
-import edu.co.sergio.mundo.vo.Visitas_Tecnicas;
+import edu.co.sergio.mundo.dao.VisitasTecnicasDAO;
+import edu.co.sergio.mundo.vo.visitasTecnicas;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -16,24 +16,17 @@ import javax.servlet.RequestDispatcher;
  
 public class HelloCrunchify extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-////         reading the user input
         String id = request.getParameter("id");
         String nombre = request.getParameter("nombre");
+
+        VisitasTecnicasDAO dao = new VisitasTecnicasDAO();
         
-//        Se debe incluir validaciones - Lo recuerda: Gestion de Excepciones.
-        Visitas_tecnicasDao dao = new Visitas_tecnicasDao();
-        
-        Visitas_Tecnicas departamento = new Visitas_Tecnicas();
-//        departamento.setId_departamento(Integer.parseInt(id));
-//        departamento.setNom_departamento(nombre);
-//        dao.insert(departamento);
-        
-//        Listando la informacion  
-        List<Visitas_Tecnicas> Visitas =  dao.findAll();
+        visitasTecnicas visitas = new visitasTecnicas();
+
+        List<visitasTecnicas> Visitas =  dao.findAll();
         request.setAttribute("Visitas", Visitas);
        
-       
-//        Redireccionando la informacion
+        
         RequestDispatcher redireccion = request.getRequestDispatcher("index.jsp");
         redireccion.forward(request, response);
         
