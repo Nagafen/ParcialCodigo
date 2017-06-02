@@ -20,7 +20,7 @@
     
     <servlet>
         <servlet-name>ChartServlet1</servlet-name>
-        <servlet-class>com.crunchify.jsp.servlet.ChartServlet</servlet-class>
+        <servlet-class>com.crunchify.jsp.servlet.ChartServlet1</servlet-class>
     </servlet>
        
     
