@@ -125,25 +125,26 @@ public class ChartServlet1 extends HttpServlet {
         
 
 	public JFreeChart getChart() throws URISyntaxException {
-		
-                DefaultPieDataset dataset = new DefaultPieDataset();
-	        //Crear la capa de servicios que se enlace con el DAO
-                List <Visitas_Tecnicas>c=new LinkedList<Visitas_Tecnicas>();
-                Visitas_tecnicasDao dep=new Visitas_tecnicasDao();
-                c= dep.findAll();
-               
-            
-               
+	DefaultPieDataset dataset = new DefaultPieDataset();
+//	        Crear la capa de servicios que se enlace con el DAO
                 
+                Visitas_tecnicasDao dep=new Visitas_tecnicasDao();
+                LinkedList<Visitas_Tecnicas> c=(LinkedList) dep.findAll();
+                
+            
+//                Enumeration claves = c.keys();  
+//                while(claves.hasMoreElements()){
+//                    dataset.setValue((String)claves.nextElement(),c.get((String)claves.nextElement()));
+//                }
             for (int i = 0; i < c.size(); i++) {
-                dataset.setValue(c.get(i).getTecnico(),c.get(i).getPanalesconaimento());
+                dataset.setValue(c.get(i).getTecnico(), c.get(i).getId_colmena());
             }
             
 		boolean legend = true;
 		boolean tooltips = false;
 		boolean urls = false;
 
-		JFreeChart chart = ChartFactory.createPieChart("Informacion Panal Colmena", dataset, legend, tooltips, urls);
+		JFreeChart chart = ChartFactory.createPieChart("Grafica1", dataset, legend, tooltips, urls);
 
 		chart.setBorderPaint(Color.GREEN);
 		chart.setBorderStroke(new BasicStroke(5.0f));
