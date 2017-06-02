@@ -130,15 +130,18 @@ public class ChartServlet1 extends HttpServlet {
                 
                 Visitas_tecnicasDao dep=new Visitas_tecnicasDao();
                 LinkedList<Visitas_Tecnicas> c=(LinkedList) dep.findAll();
-                
+                    
+                dataset.setValue("hola", 55);
+                dataset.setValue("a", 45);
             
+                
 //                Enumeration claves = c.keys();  
 //                while(claves.hasMoreElements()){
 //                    dataset.setValue((String)claves.nextElement(),c.get((String)claves.nextElement()));
 //                }
-            for (int i = 0; i < c.size(); i++) {
-                dataset.setValue(c.get(i).getTecnico(), c.get(i).getId_colmena());
-            }
+//////            for (int i = 0; i < c.size(); i++) {
+//////                dataset.setValue(c.get(i).getTecnico(), c.get(i).getId_colmena());
+//////            }
             
 		boolean legend = true;
 		boolean tooltips = false;
