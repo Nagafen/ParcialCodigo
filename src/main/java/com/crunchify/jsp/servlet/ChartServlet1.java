@@ -40,17 +40,13 @@ public class ChartServlet1 extends HttpServlet {
   
     private JFreeChart createChart() {
         DefaultPieDataset dataset = new DefaultPieDataset();
-//        Visitas_tecnicasDao c=new Visitas_tecnicasDao();
-//        ArrayList<Visitas_Tecnicas> arr=new ArrayList();
-//        arr=(ArrayList<Visitas_Tecnicas>) c.findAll();
+        Visitas_tecnicasDao c=new Visitas_tecnicasDao();
+        ArrayList<Visitas_Tecnicas> arr=new ArrayList();
+        arr=(ArrayList<Visitas_Tecnicas>) c.findAll();
         
-        
-        dataset.setValue("One",43.2);
-        dataset.setValue("Two", 10.0);
-        dataset.setValue("Three", 27.5);
-        dataset.setValue("Four", 17.5);
-        dataset.setValue("Five", 11.0);
-        dataset.setValue("Six", 19.4);
+        for (int i = 0; i < arr.size(); i++) {
+            dataset.setValue(String.valueOf(arr.get(i).getId_colmena()), arr.get(i).getPanalesconaimento());
+        }
         
         JFreeChart chart = ChartFactory.createPieChart(
             "Porcentaje de paneles con Alimentos",  // chart title
