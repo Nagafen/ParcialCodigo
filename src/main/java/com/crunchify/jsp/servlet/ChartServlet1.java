@@ -40,9 +40,9 @@ public class ChartServlet1 extends HttpServlet {
   
     private JFreeChart createChart() {
         DefaultPieDataset dataset = new DefaultPieDataset();
-        Visitas_tecnicasDao c=new Visitas_tecnicasDao();
-        ArrayList<Visitas_Tecnicas> arr=new ArrayList();
-        arr=(ArrayList<Visitas_Tecnicas>) c.findAll();
+//        Visitas_tecnicasDao c=new Visitas_tecnicasDao();
+//        ArrayList<Visitas_Tecnicas> arr=new ArrayList();
+//        arr=(ArrayList<Visitas_Tecnicas>) c.findAll();
         
         
         dataset.setValue("One",43.2);
