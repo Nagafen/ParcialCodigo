@@ -45,7 +45,7 @@ public class ChartServlet1 extends HttpServlet {
         arr=(ArrayList<Visitas_Tecnicas>) c.findAll();
         
         for (int i = 0; i < arr.size(); i++) {
-            dataset.setValue(String.valueOf(arr.get(i).getId_colmena()), arr.get(i).getPanalesconaimento());
+            dataset.setValue(arr.get(i).getTecnico(), arr.get(i).getPanalesconaimento());
         }
         
         JFreeChart chart = ChartFactory.createPieChart(
