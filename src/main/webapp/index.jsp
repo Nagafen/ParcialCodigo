@@ -16,7 +16,9 @@ body {
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Crunchify JSP Servlet Example</title>
 </head>
+<h1 align="center"> Dash Board </h1>
 <body>
+        
     <div align="center" style="margin-top: 50px;">
      
     <img src="ChartServlet"  align="right"/>
