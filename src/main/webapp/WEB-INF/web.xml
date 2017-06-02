@@ -35,6 +35,8 @@
      <servlet-mapping>
         <servlet-name>ChartServlet</servlet-name>
         <url-pattern>/ChartServlet</url-pattern>
-    </servlet-mapping>
+        <servlet-name>ChartServlet1</servlet-name>
+        <url-pattern>/ChartServlet1</url-pattern>
+     </servlet-mapping>
     
 </web-app>
